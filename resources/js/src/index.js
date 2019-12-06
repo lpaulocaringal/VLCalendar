@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 // import reducers from './reducers';
 
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { Login} from './pages';
+import { Login, Main} from './pages';
 
 // const createStoreWithMiddleware = applyMiddleware()(createStore);
 export default class App extends Component {
@@ -39,7 +39,8 @@ export default class App extends Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path='/'><Login/></Route>
+                    <Route path='/login' render={({ history }) => this.checkAuth(<Login history={history} />)} />
+                    <Route path='/' render={({ history }) => this.requireAuth(<Main history={history} />)} />
                 </Switch>
             </BrowserRouter>
         );

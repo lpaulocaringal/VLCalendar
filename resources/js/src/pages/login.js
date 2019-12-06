@@ -36,14 +36,15 @@ export default class Login extends Component {
         // });
 
         // if (r.success) {
-        //     document.cookie = "adminKey=" + r.data.auth_token;
-        //     this.props.history.push("/");
+            document.cookie = "adminKey=admin";
+            this.props.history.push("/");
         // } else {
         //     this.setState({ msg: r.data, style: "alert-danger" })
         //     this.handleChange("", "email")
         //     this.handleChange("", "password")
         // }
-        console.log("nice");
+        // console.log("nice");
+        // this.props.history.push("/");
     }
     render() {
         return (
@@ -54,17 +55,17 @@ export default class Login extends Component {
                             <div className="card-header">Login</div>
                             <form onSubmit={(e) => this.login(e)}>
                                 <div className="card-body">
-                                    <div class="form-group row">
-                                        <div class="col-md-3">username</div>
-                                        <div class="col-md-9"><input type="text"/></div>
+                                    <div className="form-group row">
+                                        <div className="col-md-3">username</div>
+                                        <div className="col-md-9"><input type="text"/></div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-3">password</div>
-                                        <div class="col-md-9"><input type="password"/></div>
+                                    <div className="form-group row">
+                                        <div className="col-md-3">password</div>
+                                        <div className="col-md-9"><input type="password"/></div>
                                     </div>
                                 </div>
 
-                                <div className="card-footer"><button type="submit" class="btn-primary">Submit</button></div>
+                                <div className="card-footer"><button type="submit" className="btn-primary">Submit</button></div>
                             </form>
                         </div>
                     </div>
